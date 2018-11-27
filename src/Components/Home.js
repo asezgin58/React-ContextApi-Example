@@ -1,21 +1,15 @@
-import {Component} from "react";
-import React from "react";
-import  MyContext from '../Context/context';
-import {withRouter} from 'react-router';
+import React, {Component, Fragment} from 'react';
+
+import MyContext from '../Context/context';
 
 class Home extends Component {
 
     constructor(props) {
         super(props);
 
-        this.state={
-            name:""
+        this.state = {
+            name: ""
         }
-    }
-
-
-    navigateToPage = (val) => {
-        this.props.history.push('/' + val.target.name);
     }
 
     handleChange(obj) {
@@ -26,26 +20,37 @@ class Home extends Component {
     }
 
     render() {
-        console.log(this.state)
+        // console.log(this.state)
         return (
-            <div className="home">
-                <MyContext.Consumer>
-                    {(context) => (
-                        <React.Fragment>
-                            <h3>Home Page</h3>
-                            <hr/>
-                            <input type="text" name="name" value={this.state.name} onChange={(e) => this.handleChange(e)}/>
-                            <button onClick={()=>context.growAYearOlder(this.state.name)}>Add</button>
-                            <div style={{margin: '2%'}}>
-                                <button name="list" onClick={(e) => this.navigateToPage(e)}>Go to List Page</button>
+            <MyContext.Consumer>
+                {(context) => (
+                    <Fragment>
+                        <div className="col-md-12 order-md-1 text-center">
+                            <h3 className="mb-3">Name Form</h3>
+
+                            <div className="row justify-content-center">
+                                <div className="col-md-8 mb-3 text-center">
+                                    <label htmlFor="name">Enter Name</label>
+                                    <input type="text" className="form-control" id="name" placeholder=""
+                                           required="" value={this.state.name} onChange={(e) => this.handleChange(e)}/>
+                                    <div className="invalid-feedback">
+                                        Valid name is required.
+                                    </div>
+                                </div>
 
                             </div>
-                        </React.Fragment>
-                    )}
-                </MyContext.Consumer>
-            </div>
-        )
+
+                            <hr className="mb-4"/>
+
+                            <button className="btn btn-primary btn-lg btn-block" onClick={()=>context.addNewRecordForList(this.state.name)}>Save</button>
+
+                        </div>
+                    </Fragment>
+                )}
+            </MyContext.Consumer>
+
+        );
     }
 }
 
-export default withRouter(Home);
+export default Home;
