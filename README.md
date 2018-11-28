@@ -6,8 +6,12 @@ It is an example to React's new Context API.
 
 1. do a `npm i` then a `npm start`
 
-#### View
+## View
 
 ![alt text](https://i.imgur.com/Mfvb1Np.png)
 
 ![alt text](https://i.imgur.com/WShma0S.png)
+
+![alt text](https://i.imgur.com/0kyN5ed.png)
+
+![alt text](https://i.imgur.com/ciERdEP.png)

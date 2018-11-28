@@ -29,7 +29,7 @@ class Search extends Component {
                                        autoComplete="off"/>
 
                                 <ul id="list" className="position-absolute bg-light w-100 list-unstyled pre-scrollable"
-                                    style={{top: 37, left: 0, borderRadius: '5px', maxHeight: '30% !important'}}>
+                                    style={{top: 37, left: -3, borderRadius: '5px', maxHeight: '30% !important'}}>
                                     {this.renderList(context.state.searchList)}
                                 </ul>
 
