@@ -31,8 +31,8 @@ class Home extends Component {
                             <div className="row justify-content-center">
                                 <div className="col-md-8 mb-3 text-center">
                                     <label htmlFor="name">Enter Name</label>
-                                    <input type="text" className="form-control" id="name" placeholder=""
-                                           required="" value={this.state.name} onChange={(e) => this.handleChange(e)}/>
+                                    <input type="text" className="form-control" id="nameText" placeholder=""
+                                           required="" onChange={(e) => this.handleChange(e)}/>
                                     <div className="invalid-feedback">
                                         Valid name is required.
                                     </div>

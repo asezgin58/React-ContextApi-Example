@@ -18,6 +18,9 @@ class MyProvider extends Component {
             name: val,
         });
 
+        document.getElementById("nameText").value = "";
+        document.getElementById("nameText").focus();
+
         this.setState({
             list: newList,
             name: ""
@@ -30,13 +33,13 @@ class MyProvider extends Component {
 
         const {list} = this.state;
 
-        if(val.length>0){
+        if (val.length > 0) {
             let newList = list.filter(f => f.name.toUpperCase().includes(val.toUpperCase()));
 
             this.setState({
                 searchList: newList
             })
-        }else{
+        } else {
             this.setState({
                 searchList: []
             })
