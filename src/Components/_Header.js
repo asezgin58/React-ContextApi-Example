@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 import _Menu from './_Menu';
 import _Content from './_Content';
+import Search from './Search';
 
 class _Header extends Component {
     render() {
@@ -23,12 +24,9 @@ class _Header extends Component {
                                 {/*MENU*/}
                                 <_Menu/>
                                 {/*MENU*/}
-                                <form className="form-inline mt-2 mt-md-0">
-                                    <input className="form-control mr-sm-2" type="text" placeholder="Search"
-                                           aria-label="Search"/>
-                                    <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search
-                                    </button>
-                                </form>
+                                {/*Search*/}
+                                <Search/>
+                                {/*Search*/}
                             </div>
 
                         </div>
